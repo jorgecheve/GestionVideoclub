@@ -17,6 +17,8 @@ typedef struct {
 
 void NuevaPelicula(Pelicula *pe, int totalPe);
 
+void imprimirListaPel(Pelicula listaPel[], int totalPel);
+
 void BuscarPelicula();
 
 void EliminarPelicula();

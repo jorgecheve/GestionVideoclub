@@ -23,7 +23,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe) //RECIBIR LISTA DE LOCALES Y DE AC
 	printf("Codigo de pelicula: ");
 	fgets(str, MAX_LENGTH, stdin);		//GUARDAMOS EN LA CADENA CON LONCITUD MAX. LO QUE INTRODUCE EL USUARIO
 	//clear_if_needed(str);
-	sscanf(str, "%d", &pe->cod_Peli);			//GUARDAMOS EN LA POSICION DEL ARRAY EL ATRIBUTO -en formato de numero- GUARDADO EN LA CADENA CON fgets
+	sscanf(str, "%d", &pe->cod_Peli);	//GUARDAMOS EN LA POSICION DEL ARRAY EL ATRIBUTO -en formato de numero- GUARDADO EN LA CADENA CON fgets
 
 	printf("Ano: ");
 	fgets(str, MAX_LENGTH, stdin);
@@ -46,6 +46,18 @@ void NuevaPelicula(Pelicula *pe, int totalPe) //RECIBIR LISTA DE LOCALES Y DE AC
 	
 	//IMPRIMIR LSITA DE LOCALES PARA QUE INTRODUZCAN EL LOCAL DONDE SE VA A ENCONTRAR LA PELICULA.
 
+	//COMPROBAR SI EL CODIGO NO ES REPETIDO (OTRO MÉTODO)
+
 	printf("\n");
 
 }
+ void imprimirListaPel(Pelicula listaPel[], int totalPel)
+ {
+ 	int i;
+ 	for(i=0;i<totalPel;i++)
+ 	{
+ 		printf("Pelicula: %s Ano: %d Duracion: %d Genero: %s Codigo: %d \n", 
+ 			listaPel[i].nombre, listaPel[i].ano, listaPel[i].duracion, listaPel[i].genero, listaPel[i].cod_Peli);  //FALTARIA EL PROTAGONISTA Y EL LOCAL
+ 	}
+
+ }

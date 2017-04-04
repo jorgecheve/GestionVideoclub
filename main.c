@@ -38,10 +38,11 @@ int main (void)
 			case 2: 
 				NuevoActor(&listaActor[totalActor], totalActor);
 				printf("Actor: %s  Codigo: %d\n",listaActor[totalActor].nombre,  listaActor[totalActor].cod_Actor);
-				totalPelis++;
+				totalActor++;
 				break;
 
 			case 3: 
+				imprimirListaPel(listaPelis, totalPelis);
 				break;
 		}
 	} while(option != 0);
