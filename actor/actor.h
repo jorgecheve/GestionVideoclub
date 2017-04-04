@@ -7,7 +7,7 @@ typedef struct {
 	int cod_Actor;
 }Actor;
 
-void NuevoActor();
+void NuevoActor(Actor *ac, int totalAc);
 
 void EditarActor();
 

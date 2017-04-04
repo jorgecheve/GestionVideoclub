@@ -3,6 +3,7 @@
 
 
 
+
 typedef struct {
 	int cod_Peli;
 	char *nombre;

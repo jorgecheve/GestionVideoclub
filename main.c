@@ -18,6 +18,9 @@ int main (void)
 	Pelicula listaPelis[20]; //HAY QUE MIRAR COMO HACER PARA QUE SE PUEDA AÑADIR PELÍCULAS SIN LÍMITE
 	int totalPelis=0;
 
+	Actor listaActor[20]; 
+	int totalActor=0;
+
 	int option;
 	do
 	{
@@ -27,12 +30,15 @@ int main (void)
 		{
 			case 1: 
 				NuevaPelicula(&listaPelis[totalPelis], totalPelis);
-
 				printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
-
 				totalPelis++;
+
+
 				break;
 			case 2: 
+				NuevoActor(&listaActor[totalActor], totalActor);
+				printf("Actor: %s  Codigo: %d\n",listaActor[totalActor].nombre,  listaActor[totalActor].cod_Actor);
+				totalPelis++;
 				break;
 
 			case 3: 
@@ -52,9 +58,10 @@ int menu(void)
 
 	do {
 		printf("\t1. Introducir pelicula\n");
-		printf("\t2. Imprimir listado peliculas\n");
-		printf("\t3. Peliculas más alquiladas\n");
-		printf("\t4. Dar de alta cliente\n");
+		printf("\t2. Introducir actor\n");
+		printf("\t3. Imprimir listado peliculas\n");
+		printf("\t4. Peliculas más alquiladas\n");
+		printf("\t5. Dar de alta cliente\n");
 		
 		printf("\n");
 		printf("Seleccione una opción (q para salir): ");
@@ -64,7 +71,7 @@ int menu(void)
 
 		len = sscanf(str, "%d", &option);
 		printf("\n");
-	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 4 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
+	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 5 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
 
 	return (str[0] == 'q')?0:option;
 }
