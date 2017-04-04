@@ -12,8 +12,12 @@
 
 int menu(void);
 
+
 int main (void)
 {
+	Pelicula listaPelis[20]; //HAY QUE MIRAR COMO HACER PARA QUE SE PUEDA AÑADIR PELÍCULAS SIN LÍMITE
+	int totalPelis=0;
+
 	int option;
 	do
 	{
@@ -22,6 +26,11 @@ int main (void)
 		switch (option)
 		{
 			case 1: 
+				NuevaPelicula(&listaPelis[totalPelis], totalPelis);
+
+				printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
+
+				totalPelis++;
 				break;
 			case 2: 
 				break;
