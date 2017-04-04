@@ -21,6 +21,9 @@ int main (void)
 	Actor listaActor[20]; 
 	int totalActor=0;
 
+	Local listaLocal[20];
+	int totalLocal=0;
+
 	int option;
 	do
 	{
@@ -30,18 +33,21 @@ int main (void)
 		{
 			case 1: 
 				NuevaPelicula(&listaPelis[totalPelis], totalPelis);
-				printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
+				//printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
 				totalPelis++;
 
 
 				break;
 			case 2: 
 				NuevoActor(&listaActor[totalActor], totalActor);
-				printf("Actor: %s  Codigo: %d\n",listaActor[totalActor].nombre,  listaActor[totalActor].cod_Actor);
+				//printf("Actor: %s  Codigo: %d\n",listaActor[totalActor].nombre,  listaActor[totalActor].cod_Actor);
 				totalActor++;
 				break;
-
-			case 3: 
+			case 3:
+				NuevoLocal(&listaLocal[totalLocal],totalLocal);
+				totalLocal++;
+				break;
+			case 4: 
 				imprimirListaPel(listaPelis, totalPelis);
 				break;
 		}
@@ -60,12 +66,13 @@ int menu(void)
 	do {
 		printf("\t1. Introducir pelicula\n");
 		printf("\t2. Introducir actor\n");
-		printf("\t3. Imprimir listado peliculas\n");
-		printf("\t4. Peliculas más alquiladas\n");
-		printf("\t5. Dar de alta cliente\n");
+		printf("\t3. Introducir local\n");
+		printf("\t4. Imprimir listado peliculas\n");
+		printf("\t5. Peliculas mas alquiladas\n");
+		printf("\t6. Dar de alta cliente\n");
 		
 		printf("\n");
-		printf("Seleccione una opción (q para salir): ");
+		printf("Seleccione una opcion (q para salir): ");
 
 		fgets(str, MAX_LENGTH, stdin);
 		//clear_if_needed(str); 

@@ -7,6 +7,6 @@ typedef struct {
 	
 } Local;
 
-void NuevoLocal();
+void NuevoLocal(Local *lo, int totalLo);
 
 #endif
