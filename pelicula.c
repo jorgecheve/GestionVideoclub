@@ -1,11 +1,15 @@
 #include "pelicula.h"
+#include "local.h"
+#include "actor.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
+
 #define MAX_LENGTH 40 
 
-void NuevaPelicula(Pelicula *pe, int totalPe) //RECIBIR LISTA DE LOCALES Y DE ACTORES.
+void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor, Local listaLocal[], int totalLocal) //RECIBIR LISTA DE LOCALES Y DE ACTORES.
 {
 	char str[MAX_LENGTH];
 	char format_str[MAX_LENGTH];
@@ -44,8 +48,29 @@ void NuevaPelicula(Pelicula *pe, int totalPe) //RECIBIR LISTA DE LOCALES Y DE AC
 
 	//IMPRIMIR LISTA DE ACTORES PRINCIPALES PARA QUE INTRODUZCAN EL CÓDIGO.
 	
+	int i;
+	printf("Actores registrados, asigna un protagonista introduciento el codigo\n");
+	for(i=0;i<totalActor;i++)
+	{
+		printf("Actor: %s  Codigo: %d\n", listaActor[i].nombre, listaActor[i].cod_Actor);
+	}
+
+	fgets(str, MAX_LENGTH, stdin);		
+	//clear_if_needed(str);
+	sscanf(str, "%d", &pe->cod_ActorPr);
+
 	//IMPRIMIR LSITA DE LOCALES PARA QUE INTRODUZCAN EL LOCAL DONDE SE VA A ENCONTRAR LA PELICULA.
 
+	printf("Locales registrados, asigna un local introduciento el codigo\n");
+	for(i=0;i<totalLocal;i++)
+	{
+		printf("Direccion: %s  Codigo: %d\n", listaLocal[i].direccion,listaLocal[i].cod_local);
+	}
+
+	fgets(str, MAX_LENGTH, stdin);		
+	//clear_if_needed(str);
+	sscanf(str, "%d", &pe->cod_Local);
+	
 	//COMPROBAR SI EL CODIGO NO ES REPETIDO (OTRO MÉTODO)
 
 	printf("\n");
@@ -56,8 +81,10 @@ void NuevaPelicula(Pelicula *pe, int totalPe) //RECIBIR LISTA DE LOCALES Y DE AC
  	int i;
  	for(i=0;i<totalPel;i++)
  	{
- 		printf("Pelicula: %s Ano: %d Duracion: %d Genero: %s Codigo: %d \n", 
- 			listaPel[i].nombre, listaPel[i].ano, listaPel[i].duracion, listaPel[i].genero, listaPel[i].cod_Peli);  //FALTARIA EL PROTAGONISTA Y EL LOCAL
+ 		printf("Pelicula: %s Ano: %d Duracion: %d Genero: %s Codigo: %d Cod_Actor: %d Cod_Local: %d\n", 
+ 			listaPel[i].nombre, listaPel[i].ano, listaPel[i].duracion, listaPel[i].genero, listaPel[i].cod_Peli
+ 			, listaPel[i].cod_ActorPr, listaPel[i].cod_Local);  //FALTARIA EL PROTAGONISTA Y EL LOCAL
+ 		printf("--------------------------------------\n");
  	}
 
  }

@@ -1,8 +1,8 @@
 #ifndef PELICULA_H_
 #define PELICULA_H_
 
-
-
+#include "local.h"
+#include "actor.h"
 
 typedef struct {
 	int cod_Peli;
@@ -15,7 +15,7 @@ typedef struct {
 
 }Pelicula;
 
-void NuevaPelicula(Pelicula *pe, int totalPe);
+void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor, Local listaLocal[], int totalLocal);
 
 void imprimirListaPel(Pelicula listaPel[], int totalPel);
 

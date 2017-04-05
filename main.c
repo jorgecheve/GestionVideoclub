@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "pelicula/pelicula.h"
-#include "cliente/cliente.h"
-#include "local/local.h"
-#include "actor/actor.h"
-#include "alquilar/alquilar.h"
+#include "pelicula.h"
+#include "cliente.h"
+#include "local.h"
+#include "actor.h"
+#include "alquilar.h"
 
 #define MAX_LENGTH	5
 
@@ -32,7 +32,8 @@ int main (void)
 		switch (option)
 		{
 			case 1: 
-				NuevaPelicula(&listaPelis[totalPelis], totalPelis);
+				NuevaPelicula(&listaPelis[totalPelis], totalPelis,listaActor,totalActor,listaLocal, totalLocal);
+				//Pelicula *pe, int totalPe, Actor listaActor[], int totalActor, Local listaLocal[], int totalLocal
 				//printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
 				totalPelis++;
 
