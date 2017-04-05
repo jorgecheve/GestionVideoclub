@@ -67,9 +67,9 @@ int main (void)
 				totalCliente++;
 				break;
 			case 7:
-				NuevoAlquiler(listaPelis,totalPelis,listaCliente,totalCliente,&listaAlquiler[totalAlquiler],totalAlquiler);
-				//printf("%s; %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
-				totalAlquiler++;
+				NuevoAlquiler(listaPelis,totalPelis,listaCliente,totalCliente,&listaAlquiler[totalAlquiler],&totalAlquiler);
+				printf("%s; %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
+				//totalAlquiler++;
 				break;
 		}
 	} while(option != 0);

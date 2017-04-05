@@ -10,7 +10,7 @@ typedef struct {
 	int alquilada;  //Para usarla como un boolean. 1 si está alquilada, 0 si ya se ha finalizado el alquiler.
 }Alquilar;
 
-void NuevoAlquiler(Pelicula listaPelis[], int totalPelis, Cliente listaClientes[], int totalClientes, Alquilar *al, int totalAl);
+void NuevoAlquiler(Pelicula listaPelis[], int totalPelis, Cliente listaClientes[], int totalClientes, Alquilar *al, int *totalAl);
 void DevolverPeli();
 
 #endif

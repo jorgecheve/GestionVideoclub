@@ -10,7 +10,7 @@
 
 #define MAX_LENGTH 40 
 
-void NuevoAlquiler(Pelicula listaPelis[], int totalPelis, Cliente listaClientes[], int totalClientes, Alquilar *al, int totalAl)
+void NuevoAlquiler(Pelicula listaPelis[], int totalPelis, Cliente listaClientes[], int totalClientes, Alquilar *al, int *totalAl)
 {	
 	char str[MAX_LENGTH];
 	char format_str[MAX_LENGTH];
@@ -60,6 +60,8 @@ void NuevoAlquiler(Pelicula listaPelis[], int totalPelis, Cliente listaClientes[
 			al->cod_PeliAlq=listaPelis[opcion-1].cod_Peli;
 
 			al->alquilada=1; //Como si fuera un boolean. 1 si no ha sido devuelto aún.
+
+			*totalAl++;
 		}else
 		{
 			printf("Opcion escogida no valida\n");
