@@ -84,7 +84,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
  		printf("Pelicula: %s Ano: %d Duracion: %d Genero: %s Codigo: %d Cod_Actor: %d Cod_Local: %d\n", 
  			listaPel[i].nombre, listaPel[i].ano, listaPel[i].duracion, listaPel[i].genero, listaPel[i].cod_Peli
  			, listaPel[i].cod_ActorPr, listaPel[i].cod_Local);  //FALTARIA EL PROTAGONISTA Y EL LOCAL
- 		printf("--------------------------------------\n");
+ 		printf("----------------------------------------------\n");
  	}
 
  }
