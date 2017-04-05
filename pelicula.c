@@ -89,7 +89,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 
  }
 
- void BuscarPelicula(Pelicula listaPel[], int totalPel)
+ /*void BuscarPelicula(Pelicula listaPel[], int totalPel)
  {
  	int i;
  	printf("Introduce el titulo de la pelicula: " );
@@ -110,4 +110,4 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 		}
 	}
 	
- }
+ }*/

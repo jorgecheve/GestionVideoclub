@@ -51,7 +51,7 @@ int main (void)
 				imprimirListaPel(listaPelis, totalPelis);
 				break;
 			case 5:
-				BuscarPelicula(listaPelis, totalPelis);
+				//BuscarPelicula(listaPelis, totalPelis);
 				break;
 		}
 	} while(option != 0);
@@ -83,7 +83,7 @@ int menu(void)
 
 		len = sscanf(str, "%d", &option);
 		printf("\n");
-	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 5 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
+	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 7 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
 
 	return (str[0] == 'q')?0:option;
 }
