@@ -27,6 +27,9 @@ int main (void)
 	Cliente listaCliente[20];
 	int totalCliente=0;
 
+	Alquilar listaAlquiler[20];
+	int totalAlquiler=0;
+
 	int option;
 	do
 	{
@@ -60,7 +63,13 @@ int main (void)
 
 			case 6: 
 				NuevoCliente(&listaCliente[totalCliente], totalCliente);
+				printf("%s\n", listaCliente[totalCliente].dni );
 				totalCliente++;
+				break;
+			case 7:
+				NuevoAlquiler(listaPelis,totalPelis,listaCliente,totalCliente,&listaAlquiler[totalAlquiler],totalAlquiler);
+				//printf("%s; %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
+				totalAlquiler++;
 				break;
 		}
 	} while(option != 0);
@@ -82,7 +91,7 @@ int menu(void)
 		printf("\t4. Imprimir listado peliculas\n");
 		printf("\t5. Buscar pelicula\n");
 		printf("\t6. Dar de alta cliente\n");
-		printf("\t7. Peliculas mas alquiladas\n");
+		printf("\t7. Alquilar pelicula\n");
 
 		
 		printf("\n");
