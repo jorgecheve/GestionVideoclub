@@ -89,7 +89,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 
  }
 
- void BuscarPelicula(Pelicula listaPel[], int totalPel);
+ void BuscarPelicula(Pelicula listaPel[], int totalPel)
  {
  	printf("Introduce el titulo de la pelicula: " );
 	fgets(str, MAX_LENGTH, stdin);		//GUARDAMOS EN LA CADENA CON LONCITUD MAX. LO QUE INTRODUCE EL USUARIO
