@@ -24,9 +24,6 @@ int main (void)
 	Local listaLocal[20];
 	int totalLocal=0;
 
-	Local listaCliente[20];
-	int totalCliente=0;
-
 	int option;
 	do
 	{
@@ -53,18 +50,8 @@ int main (void)
 			case 4: 
 				imprimirListaPel(listaPelis, totalPelis);
 				break;
-
-			case 5: 
-				EliminarPelicula(listaPelis, totalPelis);
-				break;
-
-			case 6:
+			case 5:
 				BuscarPelicula(listaPelis, totalPelis);
-				break;
-
-			case 7: 
-				NuevoCliente(listaCliente, totalCliente);
-				totalCliente++;
 				break;
 		}
 	} while(option != 0);
@@ -84,11 +71,9 @@ int menu(void)
 		printf("\t2. Introducir actor\n");
 		printf("\t3. Introducir local\n");
 		printf("\t4. Imprimir listado peliculas\n");
-		printf("\t5. Eliminar peliculas\n");
-		printf("\t6. Buscar pelicula\n");
+		printf("\t5. Buscar pelicula por titulo\n");
+		printf("\t6. Peliculas mas alquiladas\n");
 		printf("\t7. Dar de alta cliente\n");
-		printf("\t8. Peliculas mas alquiladas\n");
-
 		
 		printf("\n");
 		printf("Seleccione una opcion (q para salir): ");
@@ -98,7 +83,7 @@ int menu(void)
 
 		len = sscanf(str, "%d", &option);
 		printf("\n");
-	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 8 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
+	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 5 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
 
 	return (str[0] == 'q')?0:option;
 }
