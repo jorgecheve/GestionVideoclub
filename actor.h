@@ -9,6 +9,6 @@ typedef struct {
 
 void NuevoActor(Actor *ac, int totalAc);
 
-void EditarActor();
+//void EditarActor();
 
 #endif

@@ -37,7 +37,6 @@ int main (void)
 				//printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
 				totalPelis++;
 
-
 				break;
 			case 2: 
 				NuevoActor(&listaActor[totalActor], totalActor);
@@ -50,6 +49,9 @@ int main (void)
 				break;
 			case 4: 
 				imprimirListaPel(listaPelis, totalPelis);
+				break;
+			case 5:
+				BuscarPelicula(listaPelis, totalPelis);
 				break;
 		}
 	} while(option != 0);
@@ -69,8 +71,9 @@ int menu(void)
 		printf("\t2. Introducir actor\n");
 		printf("\t3. Introducir local\n");
 		printf("\t4. Imprimir listado peliculas\n");
-		printf("\t5. Peliculas mas alquiladas\n");
-		printf("\t6. Dar de alta cliente\n");
+		printf("\t5. Buscar pelicula por titulo\n");
+		printf("\t6. Peliculas mas alquiladas\n");
+		printf("\t7. Dar de alta cliente\n");
 		
 		printf("\n");
 		printf("Seleccione una opcion (q para salir): ");

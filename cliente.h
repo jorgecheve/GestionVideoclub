@@ -9,6 +9,6 @@ typedef struct {
 
 void NuevoCliente(Cliente *cl, int TotalCl);
 
-void EditarCliente();
+//void EditarCliente();
 
 #endif

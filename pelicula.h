@@ -19,9 +19,9 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 
 void imprimirListaPel(Pelicula listaPel[], int totalPel);
 
-void BuscarPelicula();
+void BuscarPelicula(Pelicula listaPel[], int totalPel);
 
-void EliminarPelicula();
+//void EliminarPelicula();
 
 
 #endif
