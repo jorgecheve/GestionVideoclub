@@ -100,7 +100,9 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
  		printf("----------------------------------------------\n");
  	}
 
- 	printf("Introduce codigo de pelicula a eliminar");
+ 	printf("Introduce codigo de pelicula a eliminar"  );
+	fgets(str, MAX_LENGTH, stdin);		
+	//sscanf(str, "%d", &pe->cod_Peli);// poner aqui para eliminar
 
  }
 
