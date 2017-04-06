@@ -60,13 +60,15 @@ int main (void)
 			case 5:
 				//BuscarPelicula(listaPelis, totalPelis);
 				break;
-
 			case 6: 
+				EliminarPelicula(listaPelis, totalPelis);
+				break;
+			case 7: 
 				NuevoCliente(&listaCliente[totalCliente], totalCliente);
 				printf("%s\n", listaCliente[totalCliente].dni );
 				totalCliente++;
 				break;
-			case 7:
+			case 8:
 				NuevoAlquiler(listaPelis,totalPelis,listaCliente,totalCliente,&listaAlquiler[totalAlquiler],&totalAlquiler);
 				printf("%s; %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
 				//totalAlquiler++;
@@ -90,8 +92,9 @@ int menu(void)
 		printf("\t3. Introducir local\n");
 		printf("\t4. Imprimir listado peliculas\n");
 		printf("\t5. Buscar pelicula\n");
-		printf("\t6. Dar de alta cliente\n");
-		printf("\t7. Alquilar pelicula\n");
+		printf("\t6. Eliminar pelicula\n");
+		printf("\t7. Dar de alta cliente\n");
+		printf("\t8. Alquilar pelicula\n");
 
 		
 		printf("\n");
@@ -103,7 +106,7 @@ int menu(void)
 		len = sscanf(str, "%d", &option);
 		printf("\n");
 
-	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 7 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
+	} while ((len == 0 && str[0] != 'q') || (len > 0 && (option > 8 || option < 1)));  //Cambiar esto cuando vayamos metiendo mas opciones
 
 
 

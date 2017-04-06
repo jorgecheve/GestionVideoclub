@@ -73,7 +73,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 	
 	//COMPROBAR SI EL CODIGO NO ES REPETIDO (OTRO MÉTODO)
 
-	printf("\n");
+
 
 }
  void imprimirListaPel(Pelicula listaPel[], int totalPel)
@@ -86,6 +86,21 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
  			, listaPel[i].cod_ActorPr, listaPel[i].cod_Local);  //FALTARIA EL PROTAGONISTA Y EL LOCAL
  		printf("----------------------------------------------\n");
  	}
+
+ }
+
+ void EliminarPelicula(Pelicula listaPel[], int totalPel)
+ {
+ 	int i;
+ 	for(i=0;i<totalPel;i++)
+ 	{
+ 		printf("Pelicula: %s Ano: %d Duracion: %d Genero: %s Codigo: %d Cod_Actor: %d Cod_Local: %d\n", 
+ 			listaPel[i].nombre, listaPel[i].ano, listaPel[i].duracion, listaPel[i].genero, listaPel[i].cod_Peli
+ 			, listaPel[i].cod_ActorPr, listaPel[i].cod_Local);  //FALTARIA EL PROTAGONISTA Y EL LOCAL
+ 		printf("----------------------------------------------\n");
+ 	}
+
+ 	printf("Introduce codigo de pelicula a eliminar");
 
  }
 
