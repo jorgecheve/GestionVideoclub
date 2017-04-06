@@ -58,7 +58,7 @@ int main (void)
 				break;
 
 			case 5:
-				//BuscarPelicula(listaPelis, totalPelis);
+				BuscarPelicula(listaPelis, totalPelis);
 				break;
 			case 6: 
 				EliminarPelicula(listaPelis, totalPelis);
@@ -73,6 +73,7 @@ int main (void)
 				printf("%s; %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
 				//totalAlquiler++;
 				break;
+				
 		}
 	} while(option != 0);
 	
