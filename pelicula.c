@@ -111,8 +111,6 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
  void BuscarPelicula(Pelicula listaPel[], int totalPel)
  {
  	int i;
- 	
-
 
  	char str[MAX_LENGTH];
 	char format_str[MAX_LENGTH];
@@ -121,19 +119,25 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
  	printf("Introduce el titulo de la pelicula: " );
 	fgets(str, MAX_LENGTH, stdin);		//GUARDAMOS EN LA CADENA CON LONCITUD MAX. LO QUE INTRODUCE EL USUARIO
 	//clear_if_needed(str);
-	sscanf(str, "%d", format_str);
+	sscanf(str, "%s", format_str);
+
+	printf("%s\n", format_str);
+
+	int encontrada=0;
+
 	for(i=0;i<totalPel;i++)
 	{
 		
-		if(strcmp(format_str, listaPel[i].nombre) != 0)
+		if(strcmp(format_str, listaPel[i].nombre) == 0)
 		{
-			printf("Película encontrada: %s Ano: %d Duracion: %d Genero: %s Codigo: %d Cod_Actor: %d Cod_Local: %d\n", 
+			printf("Pelicula encontrada: %s \n Ano: %d Duracion: %d Genero: %s Codigo: %d Cod_Actor: %d Cod_Local: %d\n", 
  			listaPel[i].nombre, listaPel[i].ano, listaPel[i].duracion, listaPel[i].genero, listaPel[i].cod_Peli
  			, listaPel[i].cod_ActorPr, listaPel[i].cod_Local);
-		}
-		else
-		{
-			printf("No disponemos de esa pelicula\n");
-		}
+
+ 			encontrada=1;
+		}		
+	}
+	if(encontrada==0){
+		printf("No disponemos de esa pelicula\n");
 	}
 }
