@@ -20,10 +20,11 @@ void NuevoLocal(Local *lo, int totalLo)
 	lo->direccion=(char*)malloc((strlen(format_str)+1)*sizeof(char));
 	strcpy(lo->direccion, format_str);
 
-	printf("Codigo del local: ");
+	/*printf("Codigo del local: ");
 	fgets(str, MAX_LENGTH, stdin);		
 	//clear_if_needed(str);
-	sscanf(str, "%d", &lo->cod_local);			
+	sscanf(str, "%d", &lo->cod_local);	*/		
+	lo->cod_local=totalLo;
 
 	printf("\n");
 }

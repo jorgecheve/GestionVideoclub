@@ -7,8 +7,8 @@ typedef struct {
 	
 }Cliente;
 
-void NuevoCliente(Cliente *cl, int TotalCl);
+void NuevoCliente(Cliente *cl, int TotalCl, Cliente lista[]);
 
-//void EditarCliente();
+
 
 #endif

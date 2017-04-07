@@ -24,10 +24,11 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 	pe->nombre=(char*)malloc((strlen(format_str)+1)*sizeof(char));
 	strcpy(pe->nombre, format_str); //asignamos el valor a la pelicula añadiendole el /0 en la ultima posicion.
 
-	printf("Codigo de pelicula: ");
-	fgets(str, MAX_LENGTH, stdin);		//GUARDAMOS EN LA CADENA CON LONCITUD MAX. LO QUE INTRODUCE EL USUARIO
-	//clear_if_needed(str);
-	sscanf(str, "%d", &pe->cod_Peli);	//GUARDAMOS EN LA POSICION DEL ARRAY EL ATRIBUTO -en formato de numero- GUARDADO EN LA CADENA CON fgets
+	/*printf("Codigo de pelicula: ");
+	fgets(str, MAX_LENGTH, stdin);	 
+	//clear_if_needed(str);*/
+	//sscanf(totalPe, "%d", &pe->cod_Peli);	//El codigo sera determinara automaticamente, por el tamaño del array
+	pe->cod_Peli=totalPe;
 
 	printf("Ano: ");
 	fgets(str, MAX_LENGTH, stdin);
@@ -46,30 +47,44 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 	pe->genero=(char*)malloc((strlen(format_str)+1)*sizeof(char));
 	strcpy(pe->genero, format_str);
 
-	//IMPRIMIR LISTA DE ACTORES PRINCIPALES PARA QUE INTRODUZCAN EL CÓDIGO.
 	
-	int i;
-	printf("Actores registrados, asigna un protagonista introduciento el codigo\n");
-	for(i=0;i<totalActor;i++)
-	{
-		printf("Actor: %s  Codigo: %d\n", listaActor[i].nombre, listaActor[i].cod_Actor);
-	}
 
-	fgets(str, MAX_LENGTH, stdin);		
-	//clear_if_needed(str);
-	sscanf(str, "%d", &pe->cod_ActorPr);
+	//IMPRIMIR LISTA DE ACTORES PRINCIPALES PARA QUE INTRODUZCAN EL CÓDIGO.
+	if(totalActor>0)
+	{
+		int i;
+		printf("Actores registrados, asigna un protagonista introduciento el codigo\n");
+		for(i=0;i<totalActor;i++)
+		{
+		printf("Actor: %s  Codigo: %d\n", listaActor[i].nombre, listaActor[i].cod_Actor);
+		}
+
+		fgets(str, MAX_LENGTH, stdin);		
+		//clear_if_needed(str);
+		sscanf(str, "%d", &pe->cod_ActorPr);
+	}
+	else{
+		pe->cod_ActorPr=-1;
+	}
+	
 
 	//IMPRIMIR LSITA DE LOCALES PARA QUE INTRODUZCAN EL LOCAL DONDE SE VA A ENCONTRAR LA PELICULA.
-
-	printf("Locales registrados, asigna un local introduciento el codigo\n");
-	for(i=0;i<totalLocal;i++)
+	if(totalLocal>0)
 	{
+		int i;
+		printf("Locales registrados, asigna un local introduciento el codigo\n");
+		for(i=0;i<totalLocal;i++)
+		{
 		printf("Direccion: %s  Codigo: %d\n", listaLocal[i].direccion,listaLocal[i].cod_local);
-	}
+		}
 
 	fgets(str, MAX_LENGTH, stdin);		
 	//clear_if_needed(str);
 	sscanf(str, "%d", &pe->cod_Local);
+	}else{
+		pe->cod_Local=-1;
+	}
+	
 	
 	//COMPROBAR SI EL CODIGO NO ES REPETIDO (OTRO MÉTODO)
 
@@ -89,7 +104,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 
  }
 
- void EliminarPelicula(Pelicula listaPel[], int totalPel)
+ /*void EliminarPelicula(Pelicula listaPel[], int totalPel)
  {
  	char str[MAX_LENGTH];
  	int i;
@@ -105,7 +120,7 @@ void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor
 	fgets(str, MAX_LENGTH, stdin);		
 	//sscanf(str, "%d", &pe->cod_Peli);// poner aqui para eliminar
 
- }
+ }*/
 
 
  void BuscarPelicula(Pelicula listaPel[], int totalPel)

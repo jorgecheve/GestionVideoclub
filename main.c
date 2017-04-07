@@ -39,14 +39,11 @@ int main (void)
 		{
 			case 1: 
 				NuevaPelicula(&listaPelis[totalPelis], totalPelis,listaActor,totalActor,listaLocal, totalLocal);
-				//Pelicula *pe, int totalPe, Actor listaActor[], int totalActor, Local listaLocal[], int totalLocal
-				//printf("Pelicula: %s  Duracion: %d\n",listaPelis[totalPelis].nombre,  listaPelis[totalPelis].duracion);
 				totalPelis++;
 
 				break;
 			case 2: 
 				NuevoActor(&listaActor[totalActor], totalActor);
-				//printf("Actor: %s  Codigo: %d\n",listaActor[totalActor].nombre,  listaActor[totalActor].cod_Actor);
 				totalActor++;
 				break;
 			case 3:
@@ -60,17 +57,14 @@ int main (void)
 			case 5:
 				BuscarPelicula(listaPelis, totalPelis);
 				break;
+			
 			case 6: 
-				EliminarPelicula(listaPelis, totalPelis);
-				break;
-			case 7: 
-				NuevoCliente(&listaCliente[totalCliente], totalCliente);
-				printf("%s\n", listaCliente[totalCliente].dni );
+				NuevoCliente(&listaCliente[totalCliente], totalCliente, listaCliente);
 				totalCliente++;
 				break;
-			case 8:
+			case 7:
 				NuevoAlquiler(listaPelis,totalPelis,listaCliente,totalCliente,&listaAlquiler[totalAlquiler],&totalAlquiler);
-				printf("%s; %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
+				printf("Alquiler realizado: DNI- %s; COD_PEL- %d \n", listaAlquiler[totalAlquiler].dni_clien, listaAlquiler[totalAlquiler].cod_PeliAlq);
 				//totalAlquiler++;
 				break;
 				
@@ -93,9 +87,8 @@ int menu(void)
 		printf("\t3. Introducir local\n");
 		printf("\t4. Imprimir listado peliculas\n");
 		printf("\t5. Buscar pelicula\n");
-		printf("\t6. Eliminar pelicula\n");
-		printf("\t7. Dar de alta cliente\n");
-		printf("\t8. Alquilar pelicula\n");
+		printf("\t6. Dar de alta cliente\n");
+		printf("\t7. Alquilar pelicula\n");
 
 		
 		printf("\n");
@@ -114,16 +107,3 @@ int menu(void)
 	return (str[0] == 'q')?0:option;
 }
 
-/**
-	Esta funcion elimina los caracteres pendientes si es necesario
-	Se usa junto con fgets para leer la entrada hasta cierta longitud
-
-void clear_if_needed(char *str)
-{
-	if (str[strlen(str) - 1] != '\n')
-	{
-		int c;    
-    	while ( (c = getchar()) != EOF && c != '\n');
-    }
-}
-*/

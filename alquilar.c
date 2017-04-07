@@ -52,7 +52,7 @@ void NuevoAlquiler(Pelicula listaPelis[], int totalPelis, Cliente listaClientes[
 		//clear_if_needed(str);
 		sscanf(str, "%d", &opcion);
 
-		if(opcion>0 && opcion<=totalPelis)
+		if(opcion>0 && opcion<=totalPelis )
 		{
 			al->dni_clien=(char*)malloc((strlen(listaClientes[encontrado].dni)+1)*sizeof(char));
 			strcpy(al->dni_clien, listaClientes[encontrado].dni);

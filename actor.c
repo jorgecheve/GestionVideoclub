@@ -20,10 +20,12 @@ void NuevoActor(Actor *ac, int totalAc)
 	ac->nombre=(char*)malloc((strlen(format_str)+1)*sizeof(char));
 	strcpy(ac->nombre, format_str);
 
-	printf("Codigo del actor: ");
+	/*printf("Codigo del actor: ");
 	fgets(str, MAX_LENGTH, stdin);		
 	//clear_if_needed(str);
-	sscanf(str, "%d", &ac->cod_Actor);			
+	sscanf(str, "%d", &ac->cod_Actor);*/	
+
+	ac->cod_Actor=totalAc; //Para que se genere automaticamente sin que se repitan		
 
 	
 	printf("Edad: ");
