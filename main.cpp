@@ -110,7 +110,7 @@ int menu(void)
 		printf("Seleccione una opcion (q para salir): ");
 
 		fgets(str, 5, stdin);
-		//clear_if_needed(str); 
+		clear_if_needed(str); 
 
 		len = sscanf(str, "%d", &option);
 		printf("\n");
@@ -455,7 +455,7 @@ void imprimirPelis(vector<Pelicula2> &listaPe, vector<Actor2> &listaAc) //SE IMP
 
 		if(f==NULL)
 		{
-			printf("Error al abrir el fichero\n");
+			printf("Aun no existe fichero de peliculas\n");
 		}
 		else
 		{
@@ -486,7 +486,7 @@ void imprimirPelis(vector<Pelicula2> &listaPe, vector<Actor2> &listaAc) //SE IMP
 
 		if(f==NULL)
 		{
-			printf("Error al abrir el fichero\n");
+			printf("Aun no existe fichero de actores\n");
 		}
 		else
 		{
@@ -517,7 +517,7 @@ void imprimirPelis(vector<Pelicula2> &listaPe, vector<Actor2> &listaAc) //SE IMP
 
 		if(f==NULL)
 		{
-			printf("Error al abrir el fichero\n");
+			printf("Aun no existe fichero clientes\n");
 		}
 		else
 		{
@@ -548,7 +548,7 @@ void imprimirPelis(vector<Pelicula2> &listaPe, vector<Actor2> &listaAc) //SE IMP
 
 		if(f==NULL)
 		{
-			printf("Error al abrir el fichero\n");
+			printf("Aun no existe fichero de alquileres\n");
 		}
 		else
 		{
