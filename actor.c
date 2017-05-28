@@ -3,36 +3,27 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+
 #define MAX_LENGTH 40 
 
-void NuevoActor(Actor *ac, int totalAc) 
+void nuevoActorC(Actor *actor,char *nomb,int edad, int cod_Actor)
 {
-	char str[MAX_LENGTH];
-	char format_str[MAX_LENGTH];
-
-	printf("-Actor- (%d)\n", totalAc + 1); // +1 porque empieza por 0
-
-	printf("Nombre: ");
-	fgets(str, MAX_LENGTH,stdin);
-	//clear_if_needed(str);
-	sscanf(str, "%s",format_str);
-
-	ac->nombre=(char*)malloc((strlen(format_str)+1)*sizeof(char));
-	strcpy(ac->nombre, format_str);
-
-	/*printf("Codigo del actor: ");
-	fgets(str, MAX_LENGTH, stdin);		
-	//clear_if_needed(str);
-	sscanf(str, "%d", &ac->cod_Actor);*/	
-
-	ac->cod_Actor=totalAc; //Para que se genere automaticamente sin que se repitan		
-
+	actor->nombre=(char*)malloc((strlen(nomb)+1)*sizeof(char));
+	strcpy(actor->nombre, nomb);
 	
-	printf("Edad: ");
-	fgets(str, MAX_LENGTH, stdin);
-	//clear_if_needed(str);
-	sscanf(str, "%d", &ac->edad);
+	actor->edad=edad;
+	actor->cod_Actor=cod_Actor;
+	
+}
+void escribirFicheroActor(Actor *p)
+{
+	FILE *f=fopen("Actores.txt","a");
+	if (f==NULL)
+	{
+   		printf("Error al abrir el fichero\n");
+	}
 
-	printf("\n");
-
+	fprintf(f, "%s #%d #%d\n",p->nombre, p->edad, p->cod_Actor);
+	fclose(f);
 }

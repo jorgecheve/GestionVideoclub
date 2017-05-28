@@ -1,30 +1,27 @@
 #ifndef PELICULA_H_
 #define PELICULA_H_
 
-#include "local.h"
-#include "actor.h"
-
-typedef struct {
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	
+	typedef struct {
 	int cod_Peli;
 	char *nombre;
 	char *genero;
 	int  ano;
 	int duracion;
 	int cod_ActorPr;	//Relaciona la peli con el protagonista.
-	int cod_Local;  	//Para relacionar la peli con el local donde se encuentra
-
-
 }Pelicula;
 
-void NuevaPelicula(Pelicula *pe, int totalPe, Actor listaActor[], int totalActor, Local listaLocal[], int totalLocal);
+void nuevaPeliC(Pelicula *peli, int id,char *nombre, int ano, int duracion, char *genero);
+void escribirFicheroPeli(Pelicula *p);
 
-void imprimirListaPel(Pelicula listaPel[], int totalPel);
 
-//void EliminarPelicula(Pelicula listaPel[], int totalPel);
+#ifdef __cplusplus 
+}
 
-void BuscarPelicula(Pelicula listaPel[], int totalPel);
-
-//void EliminarPelicula();
-
+#endif
 
 #endif
